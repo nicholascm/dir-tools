@@ -1,11 +1,12 @@
-const stream = require('stream'); 
-const fs = require('fs'); 
+var stream = require('stream'); 
+var fs = require('fs'); 
+var path = require('path'); 
 
 // read cli arguments
 
-process.argv.forEach(arg => console.log(arg));
+// process.argv.forEach(arg => console.log(arg));
 
-const getPaths = () => {
+var getPaths = () => {
     let paths = {
         from: process.argv[0], 
         to: process.argv[1] 
@@ -13,13 +14,24 @@ const getPaths = () => {
     return paths; 
 }
 
+
+
 fs.readdir(`${__dirname}`, (err, files) =>  {
-    files.forEach(file => {
-        console.log(file); 
-        let fileStream = fs.createReadStream(file); 
-        let newStream = fs.createWriteStream(`/path/new-${file}`);
-        fileStream.pipe(newStream); 
-    })
+    
+    fs.mkdir('./path', () => {
+        
+        files.forEach(file => {
+            fs.stat(file, (err, stat) => {
+                if(!stat.isDirectory()) {
+                    var filePath = `${__dirname}/${file}`; 
+                    var fileStream = fs.createReadStream(filePath); 
+                    var newStream = fs.createWriteStream(`./path/${file}`);
+                    fileStream.pipe(newStream);
+                }
+            })
+        })
+    }); 
+    
 }); 
 
 
