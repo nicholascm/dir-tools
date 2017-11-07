@@ -9,6 +9,8 @@
   "author": "nicholascm90 <nicholascm90@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "graceful-fs": "^4.1.11"
+    "cli-progress": "^1.6.0",
+    "graceful-fs": "^4.1.11",
+    "progress": "^2.0.0"
   }
 }
