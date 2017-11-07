@@ -1,0 +1,14 @@
+{
+  "name": "dir-tools",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/nicholascm90/dir-tools.git",
+    "type": "git"
+  },
+  "author": "nicholascm90 <nicholascm90@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "graceful-fs": "^4.1.11"
+  }
+}
