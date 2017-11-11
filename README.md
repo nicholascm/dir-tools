@@ -11,6 +11,6 @@ Features
 ### delete dir
 
 Features
-* [ ] del /path/to/directory/to/copy /path/to/end/directory
-* [ ] Progress indicator
-* [ ] Should work with minimal memory consumption even for large files
+* [x] del /path/to/directory/
+* [x] Progress indicator
+* [x] Should work with minimal memory consumption even for large files
